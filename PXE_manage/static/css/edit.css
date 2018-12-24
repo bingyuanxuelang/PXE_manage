@@ -1,0 +1,10 @@
+.con_right{
+    width: 40%;
+    /* float: right; */
+    float: left;
+}
+
+input[type="file"] {
+    display: block;
+    margin-left: 103px;
+}

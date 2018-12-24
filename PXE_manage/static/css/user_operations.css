@@ -1,0 +1,13 @@
+.table-responsive {
+    width: 75%;
+}
+.dropup .caret{
+    border-top: 0px dashed;
+    border-bottom: 0px dashed;
+}
+
+
+.pagination{
+    float: left;
+    margin-left: 25%;
+}

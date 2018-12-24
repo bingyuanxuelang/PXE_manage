@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{% block title %}PEX管理系统 {% endblock %}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 引入 Bootstrap -->
+    {% block custom_css %}{% endblock %}
+  <link rel="stylesheet" href="/static/tree_files/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/tree_files/ace.min.css">
+  <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/index.css">
+
+</head>
+
+<body>
+
+  <div class="Ea">
+    <div class="Ea_min">
+      <div class="header">
+
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">
+                <img src="/static/img/logo/logo.png" alt="Cloud Admin Logo" class="img-responsive" height="30" width="120">
+              </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a href="/user_operation" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户管理
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="/user_operation">用户管理</a>
+                    </li>
+
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">项目管理
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#">A</a>
+                    </li>
+                    <li>
+                      <a href="#">B</a>
+                    </li>
+                    <li>
+                      <a href="#">C</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a href="#">D</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a href="#">E</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">保留内容
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#">A</a>
+                    </li>
+                    <li>
+                      <a href="#">B</a>
+                    </li>
+                    <li>
+                      <a href="#">C</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a href="#">D</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a href="#">E</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="#">通知</a>
+                </li>
+
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户名
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#">我的资料</a>
+                    </li>
+                    <li>
+                      <a href="#">修改密码</a>
+                    </li>
+                    <!-- <li><a href="#">Something else here</a></li> -->
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a href="login.html">退出</a>
+                    </li>
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container-fluid -->
+        </nav>
+      </div>
+
+      <!-- 中间内容 -->
+        {% block content %}
+        {% endblock %}
+    </div>
+  </div>
+
+  <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+  <script src="/static/js/jquery-2.0.3.min.js"></script>
+  <!-- 包括所有已编译的插件 -->
+  <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+  <script src="/static/tree_files/fuelux.tree-sampledata.js"></script>
+  <script src="/static/tree_files/fuelux.tree.min.js"></script>
+
+  <!-- ace scripts -->
+
+  <script src="/static/tree_files/ace-elements.min.js"></script>
+  <script src="/static/tree_files/ace.min.js"></script>
+
+  <script>
+    $('.dropdown-toggle').dropdown();
+  </script>
+
+  <script>
+        // flag= true
+        // $("#sidebar-collapse").on("click",function(e){
+        //     // .stopPropagation ? e.stopPropagation():e.cancelBubble = true;
+        //     if(flag){
+        //         $("#sidebar").addClass("mini-menu")
+        //         // $("#main-content").addClass("margin-left-50")
+        //         $(".search").attr("placeholder","")
+        //         flag=false
+        //     }else{
+        //         $("#sidebar").removeClass("mini-menu").addClass("sidebar")
+        //         $("#main-content").removeClass("margin-left-50")
+        //         flag=true
+
+        //     }
+
+        // })
+
+        // $(".has-sub li").click(function(e){
+        //     var e = e || event;
+        //     e.stopPropagation();
+        // })
+        // $(".has-sub").click(function(){
+        //     $(this).children(".sub").slideToggle()
+        // })
+        // $(".sub li").click(function(){
+        //     $(this).children(".sub-sub").slideToggle()
+        // })
+
+
+
+
+
+
+        // $(".dropdown li").click(function(a){
+        // 	var a = a || event;
+        // 	a.stopPropagation();
+        // })
+        // $(".dropdown").click(function(){
+        // 	$(this).children(".dropdown-menu").slideToggle()
+        // })
+        // $(".dropdown-menu li").click(function(){
+        // 	$(this).children(".dropdown").slideToggle()
+        // })
+
+
+
+
+  </script>
+
+
+  <!-- <script LANGUAGE="JavaScript">
+
+  function openwin() {
+  window.open ("login.html", "newwindow",   "height=400, width=400,top= 500,left=400, toolbar =no, menubar=no, scrollbars=no, resizable=no, location=no, status=no") //写成一行
+  }
+
+  </script> -->
+
+  <script type="text/javascript">
+    jQuery(function ($) {
+
+      $('#tree1').ace_tree({
+        dataSource: treeDataSource,
+        multiSelect: true,
+        loadingHTML: '<div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>',
+        'open-icon': 'icon-minus',
+        'close-icon': 'icon-plus',
+        'selectable': true,
+        'selected-icon': 'icon-ok',
+        'unselected-icon': 'icon-remove'
+      });
+
+      $('#tree2').ace_tree({
+        dataSource: treeDataSource2,
+        loadingHTML: '<div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>',
+        'open-icon': 'icon-folder-open',
+        'close-icon': 'icon-folder-close',
+        'selectable': false,
+        'selected-icon': null,
+        'unselected-icon': null
+      });
+
+    });
+  </script>
+
+
+<!--
+<script>
+  $(".dropdown li").click(function(e){
+    var e = e || event;
+    e.stopPropagation();
+  })
+  $(".dropdown").click(function(){
+    $(this).children(".dropdown-menu").slideToggle()
+  })
+  $(".dropdown-menu li").click(function(){
+    $(this).children(".dropdown").slideToggle()
+  })
+</script> -->
+
+{% block custom_js %}{% endblock %}
+
+</body>
+
+</html>

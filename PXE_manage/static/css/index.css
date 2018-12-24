@@ -1,0 +1,62 @@
+/* 总体布局 */
+.Ea{
+    width: 100%;
+}
+.Ea_min{
+    width: 80%;
+    margin: 0 auto;
+    /* border: 1px solid #cccccc;
+    height: 300px; */
+}
+
+.navbar{
+    background: none repeat scroll 0 0 #cccccc;
+    color: #ffffff;
+}
+.navbar > .container-fluid .navbar-brand {
+    /* margin-left: -15px; */
+    margin-top: -8px;
+}
+
+    
+
+
+/* 右侧表格 */
+
+
+.checkbox{
+   margin-top: 0px;
+   margin-bottom: 0px;
+   margin-left: 5px;
+}
+
+
+.row1 {
+    width: 60%;
+}
+
+
+.header {
+    line-height: 28px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    border-bottom: 0px solid #CCC;
+}
+
+
+.pagination{
+    float: right;
+    margin-right: 32%;
+}
+
+
+
+.dropup .caret{
+    border-top: 0px dashed;
+    border-bottom: 0px dashed;
+}
+
+.btn-group, .btn-group-vertical {
+    margin-top: -2px;
+}
