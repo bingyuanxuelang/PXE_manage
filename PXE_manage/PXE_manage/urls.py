@@ -17,9 +17,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from mng_sys.views import *
-
+import xadmin
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^xadmin/', xadmin.site.urls),
     url(r'^$', index, name="index"),
     url(r'^login/$', login, name="login"),
     url(r'^user_create/$', user_create, name="user_create"),
@@ -27,6 +27,5 @@ urlpatterns = [
     url(r'^user_edit/$', user_edit, name="user_edit"),
     url(r'^program_list/(?P<id>\d+)/$', program_list, name="program_list"),
     url(r'^make_program/(?P<id>\d+)/$', make_program, name="make_program"),
-    url(r'^upload/$', upload, name="upload"),
-
+    url(r'^upload/(?P<id>\d+)/$', upload, name="upload"),
 ]

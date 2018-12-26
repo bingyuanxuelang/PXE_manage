@@ -1,72 +1,68 @@
 {% extends "base.html" %}
-<meta charset="UTF-8">
 {% block title %}PXE管理系统{% endblock %}
-{% block custom_css %}  <link rel="stylesheet" href="/static/css/upload.css">{% endblock %}
 {% block content %}
-     <div class="Ea">
-    <div class="Ea_min">
-
-
-      <!-- 中间内容 -->
-      <div class="con">
-        <div class="con_left">
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
+    <form enctype="multipart/form-data" action="/upload/{{ id }}/" method="post" class="form-horizontal" role="form">
+        {% csrf_token %}
+{#        <div class="form-group">#}
+{#            <label for="firstname" class="col-sm-2 control-label">项目名称</label>#}
+{#            <div class="col-sm-10">#}
+{#            </div>#}
+{#        </div>#}
+        <div class="form-group">
+            <label for="firstname" class="col-sm-2 control-label">文件名称</label>
+            <div class="col-sm-10">
+            <input name="title" type="text" class="form-control" id="firstname"
+                 placeholder="请输入项目名称">
             </div>
-            <button type="submit" class="btn btn-default">搜索</button>
-          </form>
         </div>
-        <div class="con_right">
-
-
-
-          <form class="form-horizontal" role="form">
-            <div class="form-group">
-              <label for="firstname" class="col-sm-2 control-label">文件标题</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
-              </div>
+        <div class="form-group">
+            <label for="lastname" class="col-sm-2 control-label">文件路径</label>
+            <div class="col-sm-10">
+                <input name="slug" type="text" class="form-control" id="lastname"
+                       placeholder="请选择项目路径">
             </div>
-            <div class="form-group">
-              <label for="lastname" class="col-sm-2 control-label">关键字</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="lastname" placeholder="请输入姓">
-              </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname" class="col-sm-2 control-label">上传人</label>
+            <div class="col-sm-10">
+                <input name="creator" type="text" class="form-control" id="lastname"
+                 placeholder="请输入姓名">
             </div>
-
-            <input id="lefile" type="file" webkitdirectory style="display:none">
-            <div class="input-append">
-              <input id="photoCover" class="input-large" type="text" style="height:30px;margin-left:107px">
-              <a class="btn" onclick="$('input[id=lefile]').click();">选择文件</a>
+        </div>
+        <div class="form-group">
+            <label for="lastname" class="col-sm-2 control-label">备注</label>
+            <div class="col-sm-10">
+                <input name="des" type="text" class="form-control" id="lastname"
+                 placeholder="备注">
             </div>
+        </div>
+{#        <input id="lefile" type="file" style="display:none">#}
+{#        <div class="input-append">#}
+{#            <label for="lastname" class="col-sm-2 control-label">#}
+{#                <a class="btn" onclick="$('input[id=lefile]').click();">选择文件</a>#}
+{#            </label>#}
+{##}
+{#            <input id="photoCover" class="input-large" type="text" style="height:30px;margin-left:4px;margin-top: 4px">#}
+{#        </div>#}
+        <div class="form-group">
+            <label for="lastname" class="col-sm-2 control-label">
+                <input type="file" name="up_file" style="margin-left: 260px" />
+            </label>
+{#            <div class="col-sm-10">#}
+{#                <input name="des" type="text" class="form-control" id="lastname"#}
+{#                 placeholder="备注">#}
+{#            </div>#}
+        </div>
 
-
-
-
-            <!-- <div class="form-group">
-                                <label class="sr-only" for="inputfile">文件输入</label>
-                                <input type="file" id="inputfile">
-                              </div> -->
-
-
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-default">上传</button>
-              </div>
             </div>
-          </form>
-
-
         </div>
-      </div>
-
-
-
-
-    </div>
-  </div>
+    </form>
+    <p>{{ msg }}</p>
 {% endblock %}
+
 {% block custom_js %}
       <script type="text/javascript">
     $('input[id=lefile]').change(function () {
@@ -74,4 +70,3 @@
     });
   </script>
 {% endblock %}
-

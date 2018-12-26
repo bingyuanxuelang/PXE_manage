@@ -108,11 +108,10 @@
           <div class="table-responsive">
             <table class="table">
               <!-- <caption>响应式表格布局</caption> -->
-              {% for program in program_list %}
-            <a href="/make_program/{{ program.id }}">
+            <a href="/make_program/{{ id }}">
                   <button type="button" class="btn btn-primary">创建项目</button>
                 </a>
-                  <a href="/upload/{{ program.id }}">
+                  <a href="/upload/{{ id }}">
                       <button type="button" class="btn btn-primary">上传文件</button>
                   </a>
               <thead>
@@ -128,6 +127,7 @@
 
                 </tr>
               </thead>
+                {% for program in program_list %}
               <tbody>
               <tr>
                   <td>
@@ -141,7 +141,7 @@
                     <td><a href="/program_list/{{ program.id }}">{{ program.title }}</a></td>
                     <td><a >{{ program.creator }}</a></td>
                     <td><a>{{ program.slug }}</a></td>
-                    <td><a>{{ program.make_time }}</a></td>
+                    <td><a>{{ program.make_time|date:"Y-m-d H:i:s"}}</a></td>
                     <td><a>{{ program.des }}</a></td>
                   <td>
                     <a href="edit.html">编辑</a>

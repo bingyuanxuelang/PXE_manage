@@ -75,7 +75,7 @@ class Files(models.Model):
 
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=30, null=True, unique=True)
-    slug = models.SlugField(max_length=80, null=True, blank=True)
+    slug = models.CharField(max_length=80, null=True, blank=True)
     program_id = models.ForeignKey(Programs, null=False, blank=True)
     uploader = models.CharField(max_length=30, null=True, blank=True)
     des = models.CharField(max_length=80, null=True, blank=True)

@@ -16,9 +16,14 @@ class ProgramForm(forms.ModelForm):
     # up_time = forms.DateTimeField(required=True)
     class Meta:
         model = Programs
-        fields = ['id', 'title', 'slug', 'pid', 'creator', 'des', 'make_time']
+        fields = ['title', 'slug', 'creator', 'des']
 
-#
+
+class UploadForm(forms.ModelForm):
+    up_file =forms.FileField()
+    class Meta:
+        model = Files
+        fields = ['title', 'slug', 'uploader', 'des']
 # class AddUserForm(forms.ModelForm):
 #     class Meta:
 #         model = User
